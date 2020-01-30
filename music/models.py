@@ -11,6 +11,9 @@ class Album(models.Model):
      artist = models.ForeignKey(Musician, on_delete=models.CASCADE)
      genre = models.CharField(max_length=50)
 
+     def __str__(self):
+        return self.name
+
 class Song(models.Model):
     artist = models.ForeignKey(Musician, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
